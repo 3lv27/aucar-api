@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const Car = require('./Car')
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 const UserSchema = new Schema({
   username: String,
@@ -19,7 +19,10 @@ const UserSchema = new Schema({
     type: [String],
     enum: ['Buyer', 'Seller']
   },
-  cars: [Car.schema]
+  cars: [{
+    type: ObjectId,
+    ref: 'Car'
+  }]
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
