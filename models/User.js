@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 const Car = require('./Car')
 
 const UserSchema = new Schema({
   username: String,
   email: String,
   password: String,
+  profilePicture: String,
   businessData: {
       businessName: String,
       tradeName: String,
@@ -23,6 +24,6 @@ const UserSchema = new Schema({
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema)
 
-module.exports = { User };
+module.exports = { User }
