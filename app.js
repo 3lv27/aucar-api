@@ -18,6 +18,7 @@ const response = require('./helpers/response');
 //routes
 const index = require('./routes/index')
 const users = require('./routes/users')
+const auth = require('./routes/auth')
 
 const app = express()
 
@@ -59,6 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 //routes
 app.use('/', index)
 app.use('/users', users)
+app.use('/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res) {
